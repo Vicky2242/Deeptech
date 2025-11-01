@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    
+
+    <div class="profile-card">
+        <h1>DOM Manipulation</h1>
+        <img src="" alt="profile picture">
+        <h1 id="test">Shoban Dilip</h1>
+        <p class="demo">Java Developer</p>
+        <h3 class="demo">Aspiring in backend Development</h3>
+
+        <button onclick="changeColor()">Update Profile</button>
+    </div>
+
+    
+
+    <script>
+        function changeColor(){
+            document.querySelector('.profile-card').style.backgroundColor = 'lightred';
+            document.querySelector('p.demo').textContent = 'ECE';
+            document.querySelector('h3.demo').textContent = 'Dom manipulation';
+        }
+    </script>
+</body>
+</html>

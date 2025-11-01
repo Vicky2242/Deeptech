@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+
+    <h1>Online Event Registration</h1>
+
+
+    <!-- 1-onclick -->
+    <button onclick="submitFeedback()">Submit Feedback</button>
+
+    <!-- 2-dblclick -->
+    <p ondblclick="editText(this)">Double click this text</p>
+
+    <!-- 3 & 4-onmousehover click -->
+     <p onmouseover="showOffer(this)" onmouseout="hideOffer(this)">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, labore?</p>
+
+     <!-- 5-onmousedown -->
+      <p onmousedown="bookConfirm()">Press to confirm your ticket</p>
+
+      <!-- 6-onmouseup -->
+       <p onmouseup="this.style.color='red'">onmouseup</p>
+       <p id="demo"></p>
+
+       <!-- 7-onmousemove eg -->
+        <p onmousemove="trackCount(event)" style="border: 1px solid red; padding: 15px;">Example for onmousemove </p>
+
+
+
+        <!-- oncontextmenu - right click -->
+        <p oncontextmenu="disableRightClick(event)">Right-Click Disabled</p>
+
+        <!-- onmousewheel -->
+
+        <p id="test" onmousewheel="adjustText(event)">Lorem ipsum dolor sit amet.</p>
+
+    <script>
+        function submitFeedback(){
+            alert("Your Feedback is Successfully submitted");
+        }
+
+        function editText(element){
+            element.innerHTML = "Hello Welcome to the great kirikalan magic show"
+        }
+
+        function showOffer(element){
+            element.innerHTML = "Dummy text";
+        }
+
+        function hideOffer(element){
+            element.innerHTML = "Dummy text-1";
+        }
+
+        function bookConfirm(){
+            alert("Your booking is confirmed successfully")
+        }
+
+        function trackCount(event){
+            document.getElementById("demo").innerHTML = "Mouse positon-X:" +event.clientX + ", Y: " +event.clientY;
+        }
+
+        function disableRightClick(event){
+            event.preventDefault();
+            alert("Restricted!");
+        }
+
+        function adjustText(event){
+            let data = document.getElementById("test");
+            let size = parseInt(window.getComputedStyle(data).fontSize);
+
+            data.style.fontSize=( event.deltaY < 0 ? size+2 : size-1 ) + "px";
+        }
+    </script>
+
+</body>
+</html> 

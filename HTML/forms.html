@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <!-- forms  -->
+    <form>
+        <!-- <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"> -->
+        <fieldset>
+            <legend>Personal Data:</legend>
+                Name:<input type="text" placeholder="name" name="name">
+                <br><br>
+                Password:<input type="password" placeholder="password" name="password">
+                <br><br>
+                Email:<input type="email" placeholder="email@gmail.com" name="email">
+                <br><br>
+                Age:<input type="number" placeholder="age" name="age">
+                <br><br>
+                Phone Number:<input type="tel" placeholder="Enter ten digits" name="phone">
+                <br><br>
+                Birthday:<input type="date" placeholder="dob" name="dob">
+                <br><br>
+                Upload file:<input type="file" placeholder="file" name="file">
+                <br><br>
+                <p>Gender:</p>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">FeMale</label>
+        </fieldset>
+        
+        <br><br>
+
+        <fieldset>
+            <legend>Course Details:</legend>
+             <p>Skills:</p>
+                <input type="checkbox" id="html" name="Skill" value="html">
+                <label for="html">HTML</label>
+                <br>
+                <input type="checkbox" id="css" name="Skill" value="css">
+                <label for="css">CSS</label>
+                <br>
+                <input type="checkbox" id="Js" name="Skill" value="js">
+                <label for="Js">JS</label>
+                <br><br>
+                <label for="course">Select the course:</label>
+                <select id="course" name="course">
+                <option value="html">HTML</option>
+                <option value="Js">JS</option>
+                <option value="NodeJs">NODEJS</option>
+                <option value="PHP">PHP </option>
+                </select>
+        </fieldset>
+        <br><br>
+
+        <fieldset>
+            <legend>feedback</legend>
+            <label for="feedback">Feedback:</label><br><br>
+            <textarea   id="feedback" name="feedback" rows="8" cols="60">Please fill the feedback!
+            </textarea>
+        </fieldset>
+
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

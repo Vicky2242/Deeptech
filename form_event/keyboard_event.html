@@ -1,0 +1,27 @@
+<input type="text" onkeydown="keyDownHandle(event)" placeholder="Type Something...">
+
+<p id="msg"></p>
+
+<input type="text" id="textbox" onkeyup="countCharacters()" placeholder="Type your name...">
+
+<p id="count"></p>
+<script>
+    function keyDownHandle(e){
+        document.geElementById("msg").innerHTML = "Key Down: "+e.key;
+    }
+
+    function countCharacters(){
+        let text = document.getElementById("textbox").value;
+        document.getElementById("count").innerHTML="Length:" + text.length;
+    }
+
+    function welcomeMasg(){
+        document.getElementById("welcome").innerHTML="page is loaded Succesfully!";
+    }
+
+    function showSize(){
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+        document.getElementById("output").innerHTML = "Window Size: "+width +"x" +height;
+    }
+</script>

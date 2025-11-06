@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page - GMAIL</title>
+</head>
+<body>
+    <h1>Login Page</h1>
+
+    <form   onsubmit="returnvalidateForm()" onreset="returnconfirmReset()">
+        <input type="text" id="email" placeholder="Enter Email" onfocus="highlight(this)">
+        <br><br>
+        <input type="password" id="password" placeholder="Enter your password" onfocus="highlight(this)">
+        <br><br>
+        <input type="text" id="mobile" placeholder="Enter Mobile Number" onblur="checkMobile()">
+
+        <p id="msg"></p>
+        <br><br>
+
+        <select id="category" onchange="showProducts()">
+            <option value="">Select category </option>
+            <option value="mobile">Mobile</option>
+            <option value="laptop">Laptop</option>
+            <option value="fashion">fashion</option>
+        </select>
+
+        <p id="result"></p>
+
+            <br><br>
+
+            <input type="text" id="search" placeholder="Search anything..."   oninput="showSuggestion()">
+
+            <ul id = "suggestions" ></ul>
+
+            <br><br>
+            
+            <input type="text" id="user" placeholder="Enter Username">
+            <br><br>
+            <input type="password" id="password" placeholder="Enter your password">
+            <br><br>
+
+            <button type="submit">Login</button>
+            <br><br>
+
+            <button type="reset">Clear Form</button>
+
+      
+    </form>
+    
+    <script>
+        function highlight(field){
+            field.style.backgroundColor="yellow";
+        }
+
+        function checkMobile(){
+            let num = document.getElementById("mobile").value;
+            let msg = document.getElementById("msg");
+
+            if(num.length === 10){
+                msg.innerHTML="✅Valid";
+                msg.style.color="green";
+            }else{
+                msg.innerHTML="❌Invalid! Recorrect";
+                msg.style.color  = "red";
+            }
+        }
+
+        function showProducts(){
+            let cat=document.getElementById("category").value;
+            let result=document.getElemenetById("result");
+            result.textContent = `Showing ${cat} category products...`;
+        }
+
+        function showSuggestion(){
+            let text = document.getElementById("search").value;
+            document.getElementById("suggestions").innerHTML=<li>Searching for "${text}"...</li>;
+        }
+
+        function validateForm(){
+            let u = document.getElementById("user").value;
+            let p = document.getElementById("password").value;
+            if (u === "" || p === ""){
+                alert("Both fields are required");
+                return false;
+            }
+                alert("Login Successful");
+                return true;
+        }
+
+        function confirmReset(){
+            return confirm("Are you sure you want to clear all the data?");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCart</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="loadFunction(this)" onscroll="scrollFunction()" style="height:1800px" onresize="resizeFunction()">
+    <header>
+        <div class="container">
+            <h1>🛒 SmartCart - Your Online Gadget Store</h1>
+            <p id="load"></p>
+            <!-- <p>Welcome! Explore top deals on Smart Gadgets🔥 </p> -->
+        </div>
+    </header>
+
+    <section>
+        <div class="mobile">
+            <div id="image" onmouseover="changecolor(this)" onmouseout="originalcolor(this)" ondblclick="enlargeImage(this)" style=" margin: 20px;">
+                <img src="./11-500x500.webp" alt="smartphone" width="250px" height="170px">
+            </div>
+
+            <div class="product-details">
+                <h3 style="color: #1c79c0;">SmartPhone X15</h3>
+                <p>6.5" Display | 128 GB | Dual Camera| 
+                    30MP + 10MP | 8MP Front Camera | 4000 mAh Battery <br>
+                </p>
+                <p>💰 Price: &#8377;15,000</p>
+                <p>⭐ Rating: 4/5</p>
+                <label for="color">Choose Color:</label>
+                <select id="color" onchange="suggestcolor()">
+                    <option value="text">Select Color </option>
+                    <option value="black">Black</option>
+                    <option value="blue">Blue</option>
+                    <option value="silver">Silver</option>
+                </select>
+                <p id="suggest"></p><br>
+                <button onclick="distext()" style="background-color: #1c79c0; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">Add to Cart</button>
+             
+            </div>
+        </div>
+    </section>
+
+    <section style="margin-left: 90px;">
+
+          <h2 style="color:black; font-weight: bold;">🔍 Search Product</h2>
+          <input type="text" id="search" placeholder="Search for products..." onkeyup="liveCharacters(event)"><br>
+          <p id="suggestions"></p><br><br>
+          <form onsubmit="return validateForm()" onreset="return rest()">
+            <h2 style="color:black; font-weight: bold;">📝 Customer Feedback</h2>
+            <input type="text" id="name" name="name" placeholder="Enter your name" onfocus="highlight(this)" onblur="removeHighlight(this)"><br><br>
+            <textarea id="feedback" name="feedback" rows="5" cols="80" placeholder="Enter your feedback...."></textarea><br><br>
+            <button type="submit" >Submit Feedback</button>
+            <button type="reset" style="margin-left: 50px;">Reset</button>
+          </form>
+    </section>
+
+    <footer>
+        <p id="resize">Copyright &copy; 2025    SmartCart. All rights reserved.</p>
+    </footer>
+</body>
+        <script>
+
+       function loadFunction(element) {
+        document.getElementById("load").innerHTML="Welcome! Explore top deals on smart Gadgets 👏";
+       }
+
+       function scrollFunction() {
+        if (document.body.scrollTop > 50 ) {
+            document.body.style.backgroundColor = "lightgrey";
+        } else {
+            document.body.style.backgroundColor = "lightblue";
+        }
+       }
+
+       function resizeFunction() {
+        let width=window.innerWidth;
+        let height=window.innerHeight;
+        document.getElementById('resize').innerHTML = "Window resized to: " + width + " x " + height;
+       }
+
+    function changecolor(element){
+        element.style.border = "2px solid lightgrey";
+        element.style.borderRadius = "20px";
+    }
+
+    function originalcolor(element){
+        element.style.border = "none";
+    }
+
+     function suggestcolor(){
+        let color=document.getElementById("color").value;
+        let result=document.getElementById("suggest");
+        result.textContent=`🎨 You selected: ${color}`;
+     }
+
+        function distext(){
+            alert("✅ Item added to cart successfully!");
+        }
+
+        function enlargeImage(element){
+            element.style.width = "300px";
+            element.style.height = "200px";
+            element.style.transition = "width 0.5s, height 0.5s";
+            alert("🔍 Quick View Enabled: Showing detailed specs... ");
+        }
+
+        function liveCharacters(e){
+            let input=document.getElementById("search").value;
+           let result=document.getElementById("suggestions");
+            result.innerHTML=`Searching for '${input}'....(You pressed: ${e.key})`;
+        }
+
+        function highlight(field){
+            field.style.backgroundColor = "lightgreen";
+        }
+
+        function removeHighlight(field){
+            field.style.backgroundColor = "white";
+        }
+
+function validateForm(){
+    let username=document.getElementById("name").value;
+    let Feedback=document.getElementById("feedback").value;
+    if(username ===""|| Feedback===""){
+        alert(" ❌ Please fill all fields before submitting the feedback form");
+        return false;
+    }
+    alert("✅ Feedback submitted successfully. Thank you!");
+    return true;
+   }
+
+    function rest(){
+    return confirm("Are you sure you want to clear the feedback form?");
+    }
+        </script>
+</html>

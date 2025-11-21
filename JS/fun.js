@@ -21,13 +21,13 @@ function banking(bal, withdraw){
 let finalBal = banking(500, 1500);
 console.log("Available balance:" +finalBal);
 
-if(bal<withdraw){
-    console.log("Please try some other amount");
-}else if(bal>withdrawl){
-    console.log("withdrawl successful")
-}else{
-    console.log("Please try again.")
-}
+// if(bal<withdraw){
+//     console.log("Please try some other amount");
+// }else if(bal>withdrawl){
+//     console.log("withdrawl successful")
+// }else{
+//     console.log("Please try again.")
+// }
 
 // const greet=() => {
 //     console.log("Welcome to JS");

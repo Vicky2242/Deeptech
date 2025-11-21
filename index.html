@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Layout</title>
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+</head>
+<body>
+    <style>
+        /* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Header and Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.cta-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+.hero-subtext {
+  font-size: 1.2rem;
+  color: #666;
+}
+.hero-heading {
+  font-size: 2.5rem;
+  margin: 10px 0 30px;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.search-bar select,
+.search-bar input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 150px;
+}
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Icon Row */
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.icon-item {
+  text-align: center;
+}
+.circle-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.icon-item span {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+@media(max-width: 750px){
+  .nav-menu{
+    display: none;
+  }
+}
+
+@media(max-width: 660px){
+  .search-bar .icon-row{
+    display: none;
+    flex-direction: column;
+  }
+}
+    </style>
+  <header>
+    <nav class="navbar">
+      <div class="logo">MyLogo</div>
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <button class="cta-btn">Get Started</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <p class="hero-subtext">Welcome to our platform</p>
+    <h1 class="hero-heading">Find Your Perfect Match</h1>
+
+    <div class="search-bar">
+      <select>
+        <option>Category</option>
+        <option>Design</option>
+        <option>Development</option>
+      </select>
+      <input type="text" placeholder="Keyword" />
+      <select>
+        <option>Location</option>
+        <option>Remote</option>
+        <option>Onsite</option>
+      </select>
+      <button>Search</button>
+    </div>
+
+    <div class="icon-row">
+      <div class="icon-item">
+        <div class="circle-icon">💼</div>
+        <span>Jobs</span>
+      </div>
+      <div class="icon-item">
+        <div class="circle-icon">🎨</div>
+        <span>Design</span>
+      </div>
+      <div class="icon-item">
+        <div class="circle-icon">💻</div>
+        <span>Tech</span>
+      </div>
+      <div class="icon-item">
+        <div class="circle-icon">📚</div>
+        <span>Education</span>
+      </div>
+      <div class="icon-item">
+        <div class="circle-icon">🛒</div>
+        <span>Marketplace</span>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

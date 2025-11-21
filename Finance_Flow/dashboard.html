@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceFlow - Personal Finance Tracker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Clear All Button -->
+        <header style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div style="text-align: left;">
+                <h1>💎 FinanceFlow</h1>
+                <p class="subtitle">AI-Powered Personal Finance Tracker</p>
+            </div>
+            <button class="btn btn-danger" onclick="clearAllTransactions()">
+                🗑️ Clear All Data
+            </button>
+        </header>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Balance</div>
+                <div class="stat-value" id="totalBalance">₹0.00</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Income</div>
+                <div class="stat-value" id="totalIncome" style="color: #4ade80;">₹0.00</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Expenses</div>
+                <div class="stat-value" id="totalExpenses" style="color: #f87171;">₹0.00</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Savings Rate</div>
+                <div class="stat-value" id="savingsRate">0.0%</div>
+            </div>
+        </div>
+
+        <!-- Charts and Categories -->
+        <div class="main-content">
+            <!-- Spending Chart -->
+            <div class="glass">
+                <h2 style="color: white; margin-bottom: 20px;">📊 Spending Overview</h2>
+                <div class="chart-container">
+                    <canvas id="spendingChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Categories List -->
+            <div class="glass">
+                <h2 style="color: white; margin-bottom: 20px;">📁 Categories</h2>
+                <div class="category-list" id="categoryList">
+                    <p style="color: rgba(255,255,255,0.7); text-align: center; padding: 2rem 0;">No expenses yet</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transactions Section -->
+        <div class="glass transactions-section">
+            <div class="transaction-header">
+                <h2>💳 Recent Transactions</h2>
+                <button class="btn btn-primary" onclick="openModal()">+ Add Transaction</button>
+            </div>
+            <div id="transactionsList">
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 200px; color: rgba(255, 255, 255, 0.8);">
+                    <div style="font-size: 3em; margin-bottom: 1rem;">💳</div>
+                    <p style="text-align: center;">No transactions yet.<br>Click "+ Add Transaction" to get started!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transaction Modal -->
+    <div class="modal" id="transactionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Transaction</h2>
+                <button onclick="closeModal()" style="position: absolute; top: 20px; right: 20px; background: transparent; border: none; font-size: 1.5em; cursor: pointer; color: #667eea; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.2)'; this.style.color='#764ba2'" onmouseout="this.style.transform='scale(1)'; this.style.color='#667eea'" title="Close">
+                    ✕
+                </button>
+            </div>
+            <form id="transactionForm">
+                <div class="form-group">
+                    <label>Description *</label>
+                    <input type="text" id="description" placeholder="e.g., Grocery Shopping" required>
+                </div>
+                <div class="form-group">
+                    <label>Amount (₹) *</label>
+                    <input type="number" id="amount" step="0.01" placeholder="0.00" required min="0.01">
+                </div>
+                <div class="form-group">
+                    <label>Type *</label>
+                    <select id="type" required>
+                        <option value="expense">Expense</option>
+                        <option value="income">Income</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Category *</label>
+                    <select id="category" required>
+                        <option value="food">🍔 Food & Dining</option>
+                        <option value="transport">🚗 Transportation</option>
+                        <option value="shopping">🛍️ Shopping</option>
+                        <option value="bills">💡 Bills & Utilities</option>
+                        <option value="entertainment">🎮 Entertainment</option>
+                        <option value="health">⚕️ Healthcare</option>
+                        <option value="salary">💼 Salary</option>
+                        <option value="other">📦 Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date *</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Save Transaction</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./dashboard.js"></script>
+</body>
+</html>

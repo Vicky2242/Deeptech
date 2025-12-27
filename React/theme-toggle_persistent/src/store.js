@@ -1,12 +1,11 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import counterReducer from "./features/counterSlice";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import logger from "redux-logger";
+import themeReducer from "./features/themeSlice"; 
 
 // 1. Combine reducers
 const rootReducer = combineReducers({
-  counter: counterReducer,
+  theme: themeReducer,
 });
 
 // 2. Persist config
@@ -24,7 +23,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false, // avoid warnings with redux-persist
-    }).concat(logger),
+    }),
 });
 
 // 5. Persistor

@@ -1,31 +1,25 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import counterReducer from "./features/counterSlice";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import logger from "redux-logger";
+import authReducer from "./features/authSlice";
 
-// 1. Combine reducers
 const rootReducer = combineReducers({
-  counter: counterReducer,
+  auth: authReducer,
 });
 
-// 2. Persist config
 const persistConfig = {
   key: "root",
   storage,
 };
 
-// 3. Wrap rootReducer with persistReducer
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// 4. Configure store
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false, // avoid warnings with redux-persist
-    }).concat(logger),
+      serializableCheck: false,
+    }),
 });
 
-// 5. Persistor
 export const persistor = persistStore(store);

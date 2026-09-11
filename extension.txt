@@ -1,0 +1,88 @@
+https://meet.zoho.in/mrpk-rsn-qew
+134960199642
+
+Photo - customerID _02_photo (100573_02_Photo.jpg)
+Front and Backside Single image POIA - customerID_Key_Document_Code_POIA_01.jpg (100573_04_POIA_01.jpg)
+Front and Backside POIA - customerID_Key_Document_Code_POIA_01.jpg (100573_04_POIA_01.jpg) (100573_04_POIA_02.jpg)
+
+
+Adhaar - 04
+passport - 05
+DL - 06
+Voter ID - 07
+16207_05_POIA_01
+ 
+
+
+select CUSTOMER_ID,ISOLVE_RECIVED_DATE,CUSTOMER_STATUS,CKYC_NUMBER,RECEVIED_DATE from (
+SELECT distinct  H.CUSTOMER_REFERENCE_NUMBER AS CUSTOMER_ID,CONVERT(VARCHAR(10), H.IS_PROCESS_DATE, 105)
+AS ISOLVE_RECIVED_DATE,IRM_RESPONSEDESC AS CUSTOMER_STATUS,CM_CKYCNo AS CKYC_NUMBER,CONVERT(VARCHAR(10),
+SID_RESPONSEDATE, 105)  as RECEVIED_DATE , ROW_NUMBER() over (partition by CUSTOMER_REFERENCE_NUMBER order by CUSTOMER_REFERENCE_NUMBER desc) as row_num
+FROM CKYC_FIN_DATA H join IF_CustomerMaster on CUSTOMER_REFERENCE_NUMBER=CM_CUST_ID
+join IF_CUSTOMER_STATUS on CM_ID=ICS_CM_ID  left JOIN IF_IMMEDIATE_RESPONSE ON CM_ID=IMR_CM_ID join IF_SEARCH_IDENTITYDETAILS  on cm_id=SID_CM_ID
+left JOIN IF_MASTER_RESPONSESTATUS i ON ics_Responsestatus = IRM_RESPONSECODE
+where CM_CKYCNo is not null
+) t where row_num = 1 order by CUSTOMER_ID,row_num desc
+
+
+
+select * from CKYC_FIN_DATA where CUSTOMER_REFERENCE_NUMBER IN
+
+="'"&[@[CUST_ID]]&"'"&","
+
+="'"&A2&"'"&","
+
+=len()
+=CELL=
+
+Ctrl + 1 = Custom Num format
+ctrl+shft+L = filter
+Ctrl+D/double tap
+
+New Folder paste files inside 
+check customer details - if not valid hold
+
+
+G&I are NAMES, 
+W-DOB
+AA & AB are ADDRESS
+BG - CATEGORY, 
+BI-ADHAAR 
+BF - REF NUM, 
+
+
+CKYC_DATA_IN_10062026_42
+
+/ , - = change to space
+check  = TRUE/FALSE - Delete FALSE
+ctrl+Shift+space
+ALT OCA
+
+
+Pivot
+VLookup
+
+qc - checking each column by column
+
+18-06-26
+
+1 TO 979
+
+CHECK DUPLICATE
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+

@@ -39,6 +39,15 @@ Ctrl + 1 = Custom Num format
 ctrl+shft+L = filter
 Ctrl+D/double tap
 
+
+
+=VLOOKUP(BF200,[READY_CERSAI_REJECTION.xlsx]Sheet1!$BF$1:$BF$1199,1,0)
+
+wmic csproduct
+
+
+
+
 New Folder paste files inside 
 check customer details - if not valid hold
 
@@ -56,7 +65,7 @@ CKYC_DATA_IN_10062026_42
 / , - = change to space
 check  = TRUE/FALSE - Delete FALSE
 ctrl+Shift+space
-ALT OCA
+ALT+OCA
 
 
 Pivot
@@ -69,6 +78,336 @@ qc - checking each column by column
 1 TO 979
 
 CHECK DUPLICATE
+
+04-07-26
+
+CHECK FILE FORMAT VOTER ID - 07
+Total ready - 19
+sheet-2 - 31
+
+06-07-26
+
+Total ready - 39
+
+7-7-26
+
+start from 111
+
+IFLOW REJECTION 118 MOVED TO CUSTOMERSOURCEPATH
+
+Total ready - 25
+
+CTRL + C
+SHFT + F10 + S + V
+
+
+8-7-26
+
+CERSAI_REJECTION040720260902 - FROM 201
+from 161
+UPTO - 210
+
+
+DOUBT - AX TYPE OF DOC
+
+NAME CHANGE TO UPPER CASE
+
+UPTO - 115
+
+Total ready - 32
+
+9-7
+VICKY-CERSAI_REJECTION040720260902 - 211 to 250
+
+
+10-7
+
+AI PERM_ADD_PROOF
+
+CERSAI_940 = FIRST 50 READY DATA 
+
+13-07
+	
+CERSAI_940 = SECOND 50 READY DATA 
+
+FROM 301 - 350
+
+PENDING - 341 - 350
+
+
+14-07-26
+
+BAL - 10
+
+UPTO - 401
+
+15-07-26
+CERSAI_940 = THIRD 50 READY DATA - ONE DUPLICATE
+
+194717 -- DUPLICATE
+
+16-07-26
+from 452
+
+
+
+17-07-26
+
+UPTO - 546
+
+
+21-07-26
+
+STARTS - 547
+FOURTH 50 to SIXTH FIFTY COMPLETED
+UPTO 625
+
+22-07-26
+
+STARTS - 602
+
+SEVENTH FIFTY - 351 - 480 9TH FIFTY
+
+UPTO - 700
+
+23-07-26
+
+STARTS - 677
+
+UPTO - 751
+
+
+
+24-07-26
+
+STARTS - 756
+
+UPTO -846
+
+
+
+25-07-26
+
+STARTS - 847
+
+10TH FIFTY - 553
+from 75 sheet2 - prem devi
+
+
+junk value
+
+
+
+
+CERSAI-REMARKS = 276
+
+
+
+28-07-26
+
+14604 - 07 CAN'T ABLE TO CHANGE FILE NAME
+
+
+Image copy failure - 75
+
+29, 30 & 31
+
+Image Copy failure - 629
+
+image formate correction
+
+pdf to jpg
+
+pdf move to image-copy-folder
+
+
+03-08-26
+
+IFLOW REJECTION - 1802 TOTAL
+
+45
+
+04-08-26
+189 - duplicate
+
+80
+
+05-08-26
+
+95
+
+223 - DUPLICATE
+373 - DUPLICATE
+
+6 & 7
+
+10-08-26
+
+12-08-26
+
+
+713 - 732 - DUPLICATE - UMASHREE
+762 - 785
+781 - 782
+808 - 810
+864 - 865
+
+791 & 813 - 228273, 232991 - adhaar-front, voter-back
+
+
+CLEANSING READY DATA
+
+
+
+
+
+18-08-2026
+2079 - 2083 - DUPLICATE
+
+19-06-26
+
+CustomerSourcePath - 6,914 - count + 1075 New
+
+Iflow - 2082
+
+1041/1041
+
+567/511 = 1078 - ready
+
+
+69 - new
+
+1006 - existed(replaced)
+
+
+
+Y-drive = 423 data - Image Copy Failure
+
+
+Till Date - 20/08/26 - 7164 - Processed - 64days
+7164/64 = 111.9
+
+128
+
+
+respnsibility
+
+isolve - itteam & itoperation -> 139 numbers
+
+Re-check
+
+1008360
+
+
+
+HHF - 182
+ISOLVE-IT- 128 - 119(READY)
+ISOLVE-OPERATIONS - 11 - 3(READY)
+
+
+
+22-08-26
+
+313389 - NAME MISMATCH, ADHAAR MATCH, ADDRESS MISMATCH
+
+
+102 COUNT
+
+
+24-08-26
+
+117 - COUNT
+
+25-06-26
+
+112 - COUNT
+
+26-06-26
+
+204 - COUNTZ
+
+
+
+125389
+39591
+177577 - 177557
+187792		
+265683
+263914
+226448
+616859
+241946
+
+
+Total Number Of Data - 1748
+
+after fiter applied - 1174 data for data clensing
+
+Splitted into two people each 557
+
+now need to consolidate the 2nd person worked data to 1st person data - problem is 2nd person copy the data from original data only filtered, when try to paste the data to 1st person worked original file some cell will be empty
+
+if you able to understand try to fix it else need a guidance to do 
+
+this is the original file - iFlow_Rejection - Reproof collection - 21.08.2026
+
+this is the 2nd person file - Jawahar I Flow rejection
+
+
+IFLOW - REPROOF COLLECTION
+
+TOTAL - 1114
+READY - 294 
+
+02-09-26
+
+IMAGE COPY FAILURE
+
+TOTAL - 1170
+READY - 592	
+
+uploaded - ckyc destination  - 1313 files
+
+05-09
+
+form
+cat
+sidebar_doc
+birthday
+balance_sheet
+availability_table
+magazine
+
+piano
+building
+menu
+
+portfolio
+penguin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

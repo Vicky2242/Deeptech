@@ -1,0 +1,81 @@
+S - 1A
+
+Database Table
+CREATE TABLE products(
+id BIGINT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(100),
+description VARCHAR(255),
+price DECIMAL(10,2),
+image_url VARCHAR(255)
+);
+
+INSERT INTO products(name, description, price, image_url)
+VALUES
+('iphone', 'Apple', 70000.00, ''),
+('Samsung Galaxy', '', 80000.00, ''),
+('Sony Headphones', '', 80000.00, ''),
+
+
+
+S - 1B
+
+
+Java Entity for Spring Boot Representation 
+
+@Entity
+@Table(name="")
+public class product{
+	@Id
+	@GeneratedValue(strategy = 
+GenerationType.IDENTITY)
+private Long id;
+private String name;
+private String description;
+private BigDecimal price:
+private String imageUrl;
+
+S - 1C
+
+Repository
+
+public interface ProductRepository
+	extends JpaRepository<Product, Long>{
+}
+
+findAll()
+findById()
+save()
+deleteById()
+
+S - 1D
+
+Service
+
+@Service
+
+public class productService{
+private final ProductRepository productRepository;
+
+public ProductService(ProductRepository productRepository){
+this.productRepository = productRepository();
+}
+
+public List<Product> getAllProducts(){
+return productRepository.findAll();
+}
+}
+
+S - 1E
+
+REST Controller
+
+@RestController
+
+
+
+
+
+
+
+
+

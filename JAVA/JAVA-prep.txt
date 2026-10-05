@@ -1,3 +1,6 @@
+https://chatgpt.com/share/6ac38be8-a464-83e8-af30-39029da27914
+
+
 S - 1A
 
 Database Table
@@ -85,6 +88,55 @@ public List<Product>getProducts(){
 return productService.getAllProducts();
 }
 }
+
+-> GET/api/products
+
+S - 1F
+
+Angular consumes that API
+
+
+@Injectable({
+provideIn: 'root'
+)}
+
+export class ProductService{
+
+private apiUrl = 'http://localhost:8080/api/products'
+
+constructor(private http: HttpClient){}
+
+getProducts():Observable<Product[]>{
+	return this.http.get<Product[]>(this.apiUrl);
+}
+}
+
+Component:
+
+export class ProductComponent{
+	products: Product[]=[];
+	constructor(private productService: ProductService){}
+
+ngonInit(): void{
+this.productService.getProducts().subscribe(data => { this.products = data;
+   });
+}
+}
+
+HTML:
+
+<div *ngFor="let product of products">
+
+<h3>{{product.name}}</h3>
+
+<p>{{product.description}}</p>
+
+<p>{{product.price}}</p>
+
+<button>Buy Now</button>
+
+</div>
+
 
 
 

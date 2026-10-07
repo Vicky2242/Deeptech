@@ -1,0 +1,58 @@
+RESUME KEYWORDS
+
+SUMMARY:
+========
+
+Building REST APIs
+Relational Data Models
+Component Driven frontends
+Spring Boot for backend services
+Angular for responsive UIs
+MYSQL for data design
+JWT authentication
+API Integration
+Cloud Deployment Production
+Shipped end-to-end application independently from database design through deployment
+
+
+Experience:
+==========
+Current
+--------
+
+- Data Handling, Document validation & execution
+- Data accuracy & compliance in high-volume operations 
+- Strengthening attention to details applicable to data modeling & validation
+
+Ex-Developer Intern
+-------------------
+
+- Wordpress & its Plugins for Website management additional HTML, CSS & JS
+- Manage e-commerce using WooCommerce  and handled website content, products, categories, 
+pricing, inventory, forms, and customer-facing pages
+
+- Firebase AI-studio - React based UI's, Component state, routing & API Integration, payment gatway APIs & supported deployments
+
+- UI/UX Functional & responsive testing, troubleshoot authentication, CORS & functionality issues across live client websites.
+
+PROJECTS:
+========
+
+
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
